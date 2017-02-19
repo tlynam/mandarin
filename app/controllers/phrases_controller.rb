@@ -29,7 +29,7 @@ class PhrasesController < ApplicationController
     @phrase = Phrase.new(phrase_params)
 
     respond_to do |format|
-      if @phrase.save
+      if not_spam? && @phrase.save
         format.html { redirect_to @phrase, notice: 'Phrase was successfully created.' }
         format.json { render :show, status: :created, location: @phrase }
       else
@@ -43,7 +43,7 @@ class PhrasesController < ApplicationController
   # PATCH/PUT /phrases/1.json
   def update
     respond_to do |format|
-      if @phrase.update(phrase_params)
+      if not_spam? && @phrase.update(phrase_params)
         format.html { redirect_to @phrase, notice: 'Phrase was successfully updated.' }
         format.json { render :show, status: :ok, location: @phrase }
       else
@@ -56,7 +56,7 @@ class PhrasesController < ApplicationController
   # DELETE /phrases/1
   # DELETE /phrases/1.json
   def destroy
-    @phrase.destroy
+    # @phrase.destroy
     respond_to do |format|
       format.html { redirect_to phrases_url, notice: 'Phrase was successfully destroyed.' }
       format.json { head :no_content }
@@ -69,8 +69,12 @@ class PhrasesController < ApplicationController
       @phrase = Phrase.find(params[:id])
     end
 
+    def not_spam?
+      phrase_params[:spam].downcase == 'thirteen'
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def phrase_params
-      params.require(:phrase).permit(:english, :pinyin, :simplified)
+      params.require(:phrase).permit(:english, :pinyin, :simplified, :spam)
     end
 end
