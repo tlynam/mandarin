@@ -10,6 +10,7 @@ class PhrasesController < ApplicationController
   # GET /phrases/1
   # GET /phrases/1.json
   def show
+    @random_phrase = Phrase.order("random()").first
   end
 
   # GET /phrases/new
