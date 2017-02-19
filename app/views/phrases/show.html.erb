@@ -1,23 +1,47 @@
 <p id="notice"><%= notice %></p>
 
 <div class="english_phrase">
-  <p>
-    <strong>English:</strong>
-    <%= @phrase.english %>
-  </p>
+  <strong>English:</strong>
+  <%= @phrase.english %>
 </div>
 
-<div class="chinese_translation">
-  <p>
-    <strong>Pinyin:</strong>
+<div class="pinyin_attempt attempt">
+  <strong>Pinyin Attempt:</strong>
+  <%= text_field_tag 'pinyin_attempt' %>
+  <div class="pinyin_success status_icon">
+    😎
+  </div>
+  <div class="pinyin_failure status_icon">
+    🤔
+  </div>
+</div>
+
+<div class="simplified_attempt">
+  <strong>Simplified Attempt:</strong>
+  <%= text_field_tag 'simplified_attempt' %>
+  <div class="simplified_success status_icon">
+    😎
+  </div>
+  <div class="simplified_failure status_icon">
+    🤔
+  </div>
+</div>
+
+<div class="chinese_translations">
+  <strong>Pinyin:</strong>
+
+  <div class="translation_text pinyin_translation">
     <%= @phrase.pinyin %>
-  </p>
+  </div>
 
-  <p>
-    <strong>Simplified:</strong>
+  <strong>Simplified:</strong>
+
+  <div class="translation_text simplified_translation">
     <%= @phrase.simplified %>
-  </p>
+  </div>
 </div>
+
+<br>
 
 <%= link_to 'Edit', edit_phrase_path(@phrase) %> |
 <%= link_to 'Back', phrases_path %> |

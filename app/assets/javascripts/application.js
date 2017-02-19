@@ -16,6 +16,34 @@
 
 $(function() {
   $(".english_phrase").click(function() {
-    $(".chinese_translation").toggle();
-  });
-});
+    $(".chinese_translations").toggle()
+  })
+
+  $("#pinyin_attempt").keypress(function (e) {
+   var key = e.which;
+   if(key == 13)  // the enter key code
+    {
+      if($("#pinyin_attempt").val() === $(".pinyin_translation").text().trim()) {
+        $(".pinyin_success").css('display', 'inline');
+        $(".pinyin_failure").hide()
+      } else {
+        $(".pinyin_success").hide()
+        $(".pinyin_failure").css('display', 'inline');
+      }
+    }
+  })
+
+  $("#simplified_attempt").keypress(function (e) {
+   var key = e.which;
+   if(key == 13)  // the enter key code
+    {
+      if($("#simplified_attempt").val() === $(".simplified_translation").text().trim()) {
+        $(".simplified_success").css('display', 'inline');
+        $(".simplified_failure").hide()
+      } else {
+        $(".simplified_success").hide()
+        $(".simplified_failure").css('display', 'inline');
+      }
+    }
+  })
+})

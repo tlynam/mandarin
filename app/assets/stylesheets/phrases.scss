@@ -2,6 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.chinese_translation {
+div {
+  padding: 10px;
+  margin: 10px;
+}
+
+.chinese_translations {
+  display: none;
+}
+
+.translation_text {
+  font-size: xx-large;
+  margin-left: 33px;
+}
+
+.attempt {
+  display: inline;
+}
+
+.status_icon {
   display: none;
 }
