@@ -26,6 +26,9 @@ $(function() {
       if($("#pinyin_attempt").val() === $(".pinyin_translation").text().trim()) {
         $(".pinyin_success").css('display', 'inline');
         $(".pinyin_failure").hide()
+      } else if($("#pinyin_attempt").val() === $(".pinyin_translation_no_accent").text().trim()) {
+        $(".pinyin_success").css('display', 'inline');
+        $(".pinyin_failure").hide()
       } else {
         $(".pinyin_success").hide()
         $(".pinyin_failure").css('display', 'inline');

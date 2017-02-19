@@ -40,3 +40,7 @@ div {
   display: none;
   font-size: xx-large;
 }
+
+.pinyin_translation_no_accent {
+  display: none;
+}
