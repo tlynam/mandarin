@@ -1,6 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Phrases</h1>
+<%= link_to 'New Phrase', new_phrase_path %>
+<%= link_to 'Random Phrase', @random_phrase %>
+
+<br><br>
 
 <table>
   <thead>
@@ -25,7 +28,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Phrase', new_phrase_path %>

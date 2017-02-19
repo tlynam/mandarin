@@ -5,6 +5,7 @@ class PhrasesController < ApplicationController
   # GET /phrases.json
   def index
     @phrases = Phrase.all
+    @random_phrase = Phrase.order("random()").first
   end
 
   # GET /phrases/1
