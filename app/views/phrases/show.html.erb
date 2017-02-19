@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>English:</strong>
+  <%= @phrase.english %>
+</p>
+
+<p>
+  <strong>Pinyin:</strong>
+  <%= @phrase.pinyin %>
+</p>
+
+<p>
+  <strong>Simplified:</strong>
+  <%= @phrase.simplified %>
+</p>
+
+<%= link_to 'Edit', edit_phrase_path(@phrase) %> |
+<%= link_to 'Back', phrases_path %>
