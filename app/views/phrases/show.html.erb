@@ -1,19 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>English:</strong>
-  <%= @phrase.english %>
-</p>
+<div class="english_phrase">
+  <p>
+    <strong>English:</strong>
+    <%= @phrase.english %>
+  </p>
+</div>
 
-<p>
-  <strong>Pinyin:</strong>
-  <%= @phrase.pinyin %>
-</p>
+<div class="chinese_translation">
+  <p>
+    <strong>Pinyin:</strong>
+    <%= @phrase.pinyin %>
+  </p>
 
-<p>
-  <strong>Simplified:</strong>
-  <%= @phrase.simplified %>
-</p>
+  <p>
+    <strong>Simplified:</strong>
+    <%= @phrase.simplified %>
+  </p>
+</div>
 
 <%= link_to 'Edit', edit_phrase_path(@phrase) %> |
 <%= link_to 'Back', phrases_path %>

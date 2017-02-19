@@ -12,5 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
+
+$(function() {
+  $(".english_phrase").click(function() {
+    $(".chinese_translation").toggle();
+  });
+});
