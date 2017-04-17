@@ -27,6 +27,9 @@
   </div>
 </div>
 
+<%= audio_tag(@phrase.audio.url, controls: true) if @phrase.audio.present? %>
+</br>
+
 <div class="chinese_translations">
   <strong>Pinyin:</strong>
 
