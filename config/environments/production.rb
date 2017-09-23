@@ -83,4 +83,12 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.paperclip_defaults = {
+    storage: :s3,
+    preserve_files: true,
+    s3_host_name: 's3-us-west-2.amazonaws.com',
+    bucket: 'learn-mandarin',
+    region: 'us-west-2'
+  }
 end
