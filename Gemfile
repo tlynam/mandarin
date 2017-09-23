@@ -15,8 +15,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
-gem 'paperclip', '~> 5.1'
-gem 'aws-sdk', '~> 2.9'
+gem 'paperclip'
+gem 'aws-sdk'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
