@@ -23,7 +23,8 @@ gem 'aws-sdk', '~> 2.3.0'
 # gem 'bcrypt', '~> 3.1.7'
 
 group :development, :test do
-  gem 'byebug', platform: :mri
+  gem 'pry-rails'
+  gem 'pry-byebug'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'dotenv-rails', '~> 2.2'
