@@ -30,7 +30,7 @@ class PhrasesController < ApplicationController
 
     respond_to do |format|
       if not_spam? && @phrase.save
-        format.html { redirect_to @phrase, notice: 'Phrase was successfully created.' }
+        format.html { redirect_to phrases_path, notice: 'Phrase was successfully created.' }
         format.json { render :show, status: :created, location: @phrase }
       else
         format.html { render :new }
@@ -56,7 +56,9 @@ class PhrasesController < ApplicationController
   # DELETE /phrases/1
   # DELETE /phrases/1.json
   def destroy
-    # @phrase.destroy
+    return unless whitelisted?
+
+    @phrase.destroy
     respond_to do |format|
       format.html { redirect_to phrases_url, notice: 'Phrase was successfully destroyed.' }
       format.json { head :no_content }
@@ -71,7 +73,11 @@ class PhrasesController < ApplicationController
   end
 
   def not_spam?
-    phrase_params[:spam].downcase == 'thirteen' || ['127.0.0.1', '98.151.149.41'].include?(request.remote_ip)
+    phrase_params[:spam].downcase == 'thirteen' || whitelisted?
+  end
+
+  def whitelisted?
+    ['127.0.0.1', '98.151.149.41'].include?(request.remote_ip)
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
