@@ -64,13 +64,14 @@ class PhrasesController < ApplicationController
   end
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_phrase
       @phrase = Phrase.find(params[:id])
     end
 
     def not_spam?
-      phrase_params[:spam].downcase == 'thirteen'
+      phrase_params[:spam].downcase == 'thirteen' || ['127.0.0.1', '98.151.149.41'].include?(request.remote_ip)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
