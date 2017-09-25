@@ -23,10 +23,10 @@ $(function() {
    var key = e.which;
    if(key == 13)  // the enter key code
     {
-      if($("#pinyin_attempt").val() === $(".pinyin_translation").text().trim()) {
+      if($("#pinyin_attempt").val().toLowerCase() === $(".pinyin_translation").text().trim()) {
         $(".pinyin_success").css('display', 'inline');
         $(".pinyin_failure").hide()
-      } else if($("#pinyin_attempt").val() === $(".pinyin_translation_no_accent").text().trim()) {
+      } else if($("#pinyin_attempt").val().toLowerCase() === $(".pinyin_translation_no_accent").text().trim()) {
         $(".pinyin_success").css('display', 'inline');
         $(".pinyin_failure").hide()
       } else {

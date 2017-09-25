@@ -38,7 +38,7 @@
   </div>
 
   <div class="pinyin_translation_no_accent">
-    <%= I18n.transliterate(@phrase.pinyin) %>
+    <%= I18n.transliterate(@phrase.pinyin&.downcase) %>
   </div>
 
   <strong>Simplified:</strong>
