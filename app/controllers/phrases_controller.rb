@@ -6,6 +6,7 @@ class PhrasesController < ApplicationController
   def index
     @phrases = Phrase.order("random()").all
     @random_phrase = Phrase.order("random()").first
+    @whitelisted = whitelisted?
   end
 
   # GET /phrases/1
