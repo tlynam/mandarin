@@ -22,7 +22,6 @@
         <td><%= phrase.english %></td>
         <td><%= phrase.pinyin %></td>
         <td><%= phrase.simplified %></td>
-        <td><%= phrase.simplified %></td>
         <td><%= audio_tag(phrase.audio.url, controls: true) if phrase.audio.present? %></td>
         <td><%= link_to 'Show', phrase %></td>
         <td><%= link_to 'Edit', edit_phrase_path(phrase) %></td>
