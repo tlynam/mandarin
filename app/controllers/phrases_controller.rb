@@ -44,7 +44,7 @@ class PhrasesController < ApplicationController
   def update
     respond_to do |format|
       if not_spam? && @phrase.update(phrase_params)
-        format.html { redirect_to @phrase, notice: 'Phrase was successfully updated.' }
+        format.html { redirect_to phrases_path, notice: 'Phrase was successfully updated.' }
         format.json { render :show, status: :ok, location: @phrase }
       else
         format.html { render :edit }
